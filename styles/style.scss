@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+// Variables
+$font: 'Montserrat', sans-serif;
+
+//colors
+$primary-color: '#55302a'; //brown
+$secondary-color: '#f0652e'; //orange
+$accent-color: '#f6b22c'; //yellow
+
+//list styles
+$list-styles: (
+    text-decoration: none,
+    list-style-type: none
+);
+
+//flex variable
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $font;
+    margin: 0;
+    padding: 0;
+}
+
+// Navigation styles start
+.navbar {
+    @include flex-center;
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar a {
+    text-decoration: none;
+}
+
+.logo img{
+    max-width: 80px;
+}
