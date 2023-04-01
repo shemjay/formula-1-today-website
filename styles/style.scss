@@ -5,9 +5,11 @@
 $font: 'Montserrat', sans-serif;
 
 //color variables
-$primary-color: '#55302a'; //brown
-$secondary-color: '#f0652e'; //orange
-$accent-color: '#f6b22c'; //yellow
+$primary-color: #55302a; //brown
+$secondary-color: #f0652e; //orange
+$accent-color: #f6b22c; //yellow
+$tertiary: #c1b2b2; //light brown
+$blue: #abc8db; //light blue
 
 //mixins
 //list mixin
@@ -38,6 +40,11 @@ html {
     box-sizing: inherit;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: $font;
     margin: 0;
@@ -48,21 +55,23 @@ body {
 
 //layout styles
 .container {
-    margin: 0 auto;
     height: 100%;
     width: 100%;
-    width: 100%;
-    padding: 40px;
+    padding: 20px;
     border: 2px solid black;
+    display: flex;
+    justify-content: center;
 }
 
 .content {
-    max-width: 1200px;
-    border: 2px solid red;
+    // max-width: 1200px;
+    // border: 3px solid purple;
 }
 
 // Navigation styles start
 .navbar {
+    padding-top: 1em;
+    font-size: 1rem;
     @include flex-justify;
 }
 
@@ -71,9 +80,8 @@ body {
 }
 
 .navbar li {
-    padding: 1em;
+    color: $primary-color;
     display: inline-block;
-    border: 2px solid green;
 }
 
 .navbar a {
@@ -81,8 +89,10 @@ body {
 }
 
 .navbar-logo {
+    align-self: flex-start;
+    padding-left: 2em;
     cursor: pointer; 
-    width: 20%;
+    width: 18%;
     object-fit: contain;
     @include flex-center;
 }
@@ -92,12 +102,61 @@ body {
 }
 
 .navbar-links {
+    padding-top: 1em;
     @include flex-center;
     flex-direction: column;
 }
 
-.navbar hr {
-    border: 2px solid black;
+.navbar-links li {
+    color: $tertiary;
+    padding: 1.25em;
+}
 
+.navbar-links > ul:first-child li {
+    transition: all 0.3s ease;
+}
+
+.navbar-links > ul:first-child li:hover {
+    color: $secondary-color;
+    border-bottom: solid 5px $primary-color;
+}
+
+.navbar-links > ul:first-child {
+    text-transform: uppercase;
+    border-bottom: 1px solid $primary-color;
+}
+
+.navbar-links > ul:last-of-type {
+    align-self: flex-end;
+    margin-bottom: 1em;
+}
+
+.navbar-links > ul:last-of-type li {
+    transition: all 0.3s ease;
+    color: $primary-color;
+}
+
+.navbar-links > ul:last-of-type li:hover {
+    color: $secondary-color;
+}
+
+.navbar hr {
+    border: none;
+    border-bottom: 2px solid black; /* set color to black */
+    height: 3px; /* set height to 1px or a value that's visible */
+      
+}
+
+.navbar-images {
+    @include flex-center;
+}
+
+.navbar-images ul {
+    border: 1px solid yellow;
+    padding: 0;
+}
+
+.navbar-images li {
+    
 }
 

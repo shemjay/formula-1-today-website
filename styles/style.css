@@ -8,6 +8,11 @@ html {
   box-sizing: inherit;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
@@ -17,20 +22,17 @@ body {
 }
 
 .container {
-  margin: 0 auto;
   height: 100%;
   width: 100%;
-  width: 100%;
-  padding: 40px;
+  padding: 20px;
   border: 2px solid black;
-}
-
-.content {
-  max-width: 1200px;
-  border: 2px solid red;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar {
+  padding-top: 1em;
+  font-size: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -41,9 +43,8 @@ body {
 }
 
 .navbar li {
-  padding: 1em;
+  color: #55302a;
   display: inline-block;
-  border: 2px solid green;
 }
 
 .navbar a {
@@ -51,8 +52,10 @@ body {
 }
 
 .navbar-logo {
+  align-self: flex-start;
+  padding-left: 2em;
   cursor: pointer;
-  width: 20%;
+  width: 18%;
   -o-object-fit: contain;
      object-fit: contain;
   display: flex;
@@ -65,12 +68,59 @@ body {
 }
 
 .navbar-links {
+  padding-top: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
+.navbar-links li {
+  color: #c1b2b2;
+  padding: 1.25em;
+}
+
+.navbar-links > ul:first-child li {
+  transition: all 0.3s ease;
+}
+
+.navbar-links > ul:first-child li:hover {
+  color: #f0652e;
+  border-bottom: solid 5px #55302a;
+}
+
+.navbar-links > ul:first-child {
+  text-transform: uppercase;
+  border-bottom: 1px solid #55302a;
+}
+
+.navbar-links > ul:last-of-type {
+  align-self: flex-end;
+  margin-bottom: 1em;
+}
+
+.navbar-links > ul:last-of-type li {
+  transition: all 0.3s ease;
+  color: #55302a;
+}
+
+.navbar-links > ul:last-of-type li:hover {
+  color: #f0652e;
+}
+
 .navbar hr {
-  border: 2px solid black;
+  border: none;
+  border-bottom: 2px solid black; /* set color to black */
+  height: 3px; /* set height to 1px or a value that's visible */
+}
+
+.navbar-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-images ul {
+  border: 1px solid yellow;
+  padding: 0;
 }/*# sourceMappingURL=style.css.map */
