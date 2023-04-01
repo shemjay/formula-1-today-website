@@ -12,11 +12,27 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
+  height: 100vw;
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+  width: 100%;
+  padding: 40px;
+  border: 2px solid black;
+}
+
+.content {
+  max-width: 1200px;
+  border: 2px solid red;
 }
 
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -24,10 +40,37 @@ body {
   list-style-type: none;
 }
 
+.navbar li {
+  padding: 1em;
+  display: inline-block;
+  border: 2px solid green;
+}
+
 .navbar a {
   text-decoration: none;
 }
 
-.logo img {
-  max-width: 80px;
+.navbar-logo {
+  cursor: pointer;
+  width: 20%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo img {
+  max-width: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navbar hr {
+  border: 2px solid black;
 }/*# sourceMappingURL=style.css.map */

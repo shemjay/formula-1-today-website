@@ -1,26 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 // Variables
+//font variables
 $font: 'Montserrat', sans-serif;
 
-//colors
+//color variables
 $primary-color: '#55302a'; //brown
 $secondary-color: '#f0652e'; //orange
 $accent-color: '#f6b22c'; //yellow
 
-//list styles
-$list-styles: (
-    text-decoration: none,
-    list-style-type: none
-);
+//mixins
+//list mixin
+@mixin list-style {
+    text-decoration: none;
+    list-style-type: none;
+}
 
-//flex variable
+//flex mixins
 @mixin flex-center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+@mixin flex-justify {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 html {
     box-sizing: border-box;
@@ -35,21 +42,62 @@ body {
     font-family: $font;
     margin: 0;
     padding: 0;
+    height: 100vw;
+    max-width: 100%;
+}
+
+//layout styles
+.container {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    width: 100%;
+    padding: 40px;
+    border: 2px solid black;
+}
+
+.content {
+    max-width: 1200px;
+    border: 2px solid red;
 }
 
 // Navigation styles start
 .navbar {
-    @include flex-center;
+    @include flex-justify;
 }
 
 .navbar ul {
     list-style-type: none;
 }
 
+.navbar li {
+    padding: 1em;
+    display: inline-block;
+    border: 2px solid green;
+}
+
 .navbar a {
     text-decoration: none;
 }
 
-.logo img{
-    max-width: 80px;
+.navbar-logo {
+    cursor: pointer; 
+    width: 20%;
+    object-fit: contain;
+    @include flex-center;
 }
+
+.navbar-logo img {
+    max-width: 100%;
+}
+
+.navbar-links {
+    @include flex-center;
+    flex-direction: column;
+}
+
+.navbar hr {
+    border: 2px solid black;
+
+}
+
