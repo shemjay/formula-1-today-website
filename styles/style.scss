@@ -40,9 +40,18 @@ html {
     box-sizing: inherit;
 }
 
-ul {
+ul,
+a {
     margin: 0;
     padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 body {
@@ -75,17 +84,9 @@ body {
     @include flex-justify;
 }
 
-.navbar ul {
-    list-style-type: none;
-}
-
 .navbar li {
     color: $primary-color;
     display: inline-block;
-}
-
-.navbar a {
-    text-decoration: none;
 }
 
 .navbar-logo {
@@ -149,14 +150,15 @@ body {
 
 .navbar-images {
     @include flex-center;
+    width: 100%;
 }
 
 .navbar-images ul {
-    border: 1px solid yellow;
-    padding: 0;
+    border: 3px solid yellow;
+    @include flex-center;
 }
 
 .navbar-images li {
-    
+    padding: 1em;
 }
 

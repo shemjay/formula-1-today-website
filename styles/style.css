@@ -8,9 +8,18 @@ html {
   box-sizing: inherit;
 }
 
-ul {
+ul,
+a {
   margin: 0;
   padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
@@ -38,17 +47,9 @@ body {
   align-items: center;
 }
 
-.navbar ul {
-  list-style-type: none;
-}
-
 .navbar li {
   color: #55302a;
   display: inline-block;
-}
-
-.navbar a {
-  text-decoration: none;
 }
 
 .navbar-logo {
@@ -118,9 +119,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .navbar-images ul {
-  border: 1px solid yellow;
-  padding: 0;
+  border: 3px solid yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-images li {
+  padding: 1em;
 }/*# sourceMappingURL=style.css.map */
