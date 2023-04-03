@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;700&display=swap');
 
 // Variables
 //font variables
@@ -10,6 +10,7 @@ $secondary-color: #f0652e; //orange
 $accent-color: #f6b22c; //yellow
 $tertiary: #c1b2b2; //light brown
 $blue: #abc8db; //light blue
+$grey: #adadad; //light frey
 
 //mixins
 //list mixin
@@ -34,7 +35,19 @@ $blue: #abc8db; //light blue
 //text mixin
 @mixin text-primary {
     color: $primary-color;
-    font-size: 12px;
+    font-size: 1.5em;
+}
+
+@mixin text-secondary {
+    color: $primary-color;
+    font-size: 1em;
+    font-weight: 700;
+}
+
+@mixin text-tertiary {
+    color: $grey;
+    font-size: 1em;
+    font-weight: 300;
 }
 
 html {
@@ -47,13 +60,27 @@ html {
 }
 
 ul,
-a {
+a,
+p {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+}
+
+a {
+    cursor: pointer;
+}
+
+h2 {
+    @include text-primary;
 }
 
 li {
     list-style-type: none;
+}
+
+p {
+    @include text-secondary;
 }
 
 a {
@@ -66,6 +93,7 @@ body {
     padding: 0;
     height: 100vw;
     max-width: 100%;
+    font-weight: 700;
 }
 
 //layout styles
@@ -80,13 +108,12 @@ body {
 
 .content {
     max-width: 100%;
-    margin: 0px 20px 0px 0px;
     border: 2px solid purple;
 }
 
 // Navigation styles start
 .navbar {
-    font-size: 12px;
+    font-size: 0.95rem;
     @include flex-justify;
 }
 
@@ -96,10 +123,7 @@ body {
 }
 
 .navbar-logo {
-    align-self: flex-start;
-    padding-left: 2em;
-    cursor: pointer; 
-    width: 18%;
+    align-self: flex-start; 
     object-fit: contain;
     @include flex-center;
 }
@@ -168,23 +192,37 @@ body {
 
 // Hero styles start
 .hero {
-    border: 1px solid grey;
-    padding: 1em;
+    border: 5px solid orange;
+    border-top: 3px solid $primary-color;
     max-width: 100%;
-    @include flex-center;
+    @include flex-center; //might be the issue to the carousel not resizing
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-columns: minmax(2fr, auto);
+    grid-auto-rows: minmax(1fr, auto);
+}
+
+.hero-content {
+    border: 2px solid red;
+    width: 100%;
 }
 
 .hero-list {
     border: 2px solid green;
 }
+
+// Styles text(dates) within hero content
+.hero-date {
+    @include text-tertiary;
+}
  
 /* Slideshow container */
 .slideshow-container {
+    width: 100%;
     border: 2px solid green;
-    max-width: 20em;
     position: relative;
     margin: auto;
-  }
+}
   
   /* Hide the images by default */
   .mySlides {
@@ -213,7 +251,7 @@ body {
     border-radius: 3px 0 0 3px;
   }
   
-  /* On hover, add a black background color with a little bit see-through */
+  /* On hover, add a black background color with some see-through */
   .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
   }
@@ -255,3 +293,46 @@ body {
     from {opacity: .4}
     to {opacity: 1}
   }
+
+// Main content starts
+.main-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 2px solid black;
+}
+
+.side-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+    grid-auto-rows: minmax(1fr, auto);
+    border: 2px solid black;
+    padding: 1em;
+}
+
+.side-content-img {
+    border: 2px solid black;
+    overflow: hidden;
+    object-fit: cover;
+    position: relative;
+}
+
+.side-content-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.text-overlay {
+    border: 2px solid purple;
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    width: 100%;
+}
+
+.text-overlay a {
+    color: white;
+}
+
