@@ -18,6 +18,7 @@ p {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 h2 {
@@ -35,8 +36,9 @@ p {
   font-weight: 700;
 }
 
-a {
-  text-decoration: none;
+section {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -62,10 +64,11 @@ body {
 }
 
 .navbar {
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .navbar li {
@@ -91,7 +94,6 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
 }
 
 .navbar-links li {
@@ -370,7 +372,7 @@ body {
 }
 
 .title {
-  margin-top: 20px;
+  padding: 1em;
 }
 
 .news-content {
@@ -413,6 +415,93 @@ body {
   text-align: center;
 }
 
+.main-ad-space {
+  border: 2px solid orange;
+  text-align: center;
+  padding: 1em;
+}
+
+.main-ad-content {
+  padding: 3em;
+  background-color: #adadad;
+}
+
+.aside-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 3px solid black;
+}
+
+.aside-scores {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.aside-scores > div {
+  flex: 1;
+  width: 100%;
+}
+
+.aside-title {
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+}
+
+.aside-title h2 {
+  margin: 0;
+}
+
+.aside-content-1, .aside-content-2 {
+  background-color: lightgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aside-content-1 > div, .aside-content-2 > div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.aside-content-1 img, .aside-content-2 img {
+  height: 50px;
+}
+
+.aside-content-1 p, .aside-content-2 p {
+  margin: 0;
+}
+
+.reports-wrapper {
+  text-align: center;
+}
+
+.reports-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1fr));
+  text-align: center;
+}
+
+.reports-content {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.reports-content.advert {
+  background-color: #ddd;
+}
+
+.reports-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
 footer {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -453,17 +542,6 @@ footer {
 
 .footer-content ul li {
   margin-bottom: 5px;
-}
-
-.main-ad-space {
-  border: 2px solid orange;
-  text-align: center;
-  padding: 1em;
-}
-
-.main-ad-content {
-  padding: 3em;
-  background-color: #adadad;
 }
 
 @media (max-width: 768px) {
