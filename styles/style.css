@@ -43,7 +43,6 @@ body {
   font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
-  height: 100vw;
   max-width: 100%;
   font-weight: 700;
 }
@@ -271,7 +270,6 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 1em;
-  grid-auto-rows: minmax(1fr, auto);
   border: 2px solid black;
   padding: 1em;
 }
@@ -301,4 +299,121 @@ body {
 
 .text-overlay a {
   color: white;
+}
+
+.scores-table {
+  display: grid;
+  grid-template-columns: 2fr;
+  border: 2px solid blue;
+}
+
+.scores-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid yellow;
+}
+
+.scores-item {
+  border: 3px solid brown;
+}
+
+.scores-standings,
+.scores-list > div:nth-child(odd) {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.scores-standings > img {
+  max-width: 5em;
+  max-height: 5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.grid-item h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  background-color: #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-logo {
+  grid-column: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-content h3 {
+  margin-bottom: 10px;
+}
+
+.footer-content ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-content ul li {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  footer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
+  .footer-content {
+    grid-column: auto/span 1;
+    grid-row: auto/span 1;
+  }
 }/*# sourceMappingURL=style.css.map */
